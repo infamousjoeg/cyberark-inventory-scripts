@@ -3,6 +3,8 @@ Scripts to help with inventory of CyberArk products.
 
 - [Getting Started](#getting-started)
 - [Secrets Managers](#secrets-managers)
+  - [Bash](#bash)
+    - [CredentialProviders.sh](#credentialproviderssh)
   - [PowerShell](#powershell)
     - [CredentialProviders.ps1](#credentialprovidersps1)
     - [CentralCredentialProviders.ps1](#centralcredentialprovidersps1)
@@ -18,6 +20,12 @@ Scripts to help with inventory of CyberArk products.
 - Some scripts will ask for CyberArk Administrator credentials. These credentials are only used to authenticate to the CyberArk REST API and are not stored anywhere.
 
 ## Secrets Managers
+
+### Bash
+
+#### CredentialProviders.sh
+
+Uses the CyberArk REST API to retrieve a list of all the Credential Providers registered to the Vault and outputs them to a CSV file called `CredentialProvidersInventory.csv`.
 
 ### PowerShell
 
