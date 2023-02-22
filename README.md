@@ -5,6 +5,7 @@ Scripts to help with inventory of CyberArk products.
 - [Secrets Managers](#secrets-managers)
   - [PowerShell](#powershell)
     - [CredentialProviders.ps1](#credentialprovidersps1)
+    - [CentralCredentialProviders.ps1](#centralcredentialprovidersps1)
 - [License](#license)
 
 
@@ -23,6 +24,12 @@ Scripts to help with inventory of CyberArk products.
 #### CredentialProviders.ps1
 
 Uses the CyberArk REST API to retrieve a list of all the Credential Providers registered to the Vault and outputs them to a CSV file called `CredentialProvidersInventory.csv`.
+
+#### CentralCredentialProviders.ps1
+
+**_Must be run from a Windows machine with .NET Framework installed._**
+
+Parses unique IP addresses from `APPAudit*.log` files present in the directory chosen by the end user. It also recursively searches all children directories. Outputs a CSV file called `<ComputerName>_CCPInventory.csv` with the IP addresses found.
 
 ## License
 
