@@ -59,4 +59,4 @@ response=$(invoke_cyberark_rest_api "$access_token" "GET" "$uri" "")
 if [ -f "CredentialProvidersInventory.csv" ]; then
     rm "CredentialProvidersInventory.csv"
 fi
-echo "$response" | jq '.ComponentsDetails' | jq -r '([.[] | keys_unsorted as $k | $k, [.[] | tostring]]) | @csv' > CredentialProvidersInventory.csv
+echo "$response" | jq -r '["ComponentIP","ComponentUserName","ComponentVersion","IsLoggedOn","LastLogonDate"], (.ComponentsDetails[] | [.ComponentIP, .ComponentUserName, .ComponentVersion, .IsLoggedOn, .LastLogonDate]) | @csv' > CredentialProvidersInventory.csv
